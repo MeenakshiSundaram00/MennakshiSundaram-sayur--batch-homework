@@ -112,7 +112,7 @@ while True:
             out=find_my_vechile(parking_lot,carNumber)
             if (out == None):
                 continue
-        collection=+out
+        collection=collection+out
     elif(option==3):
         print('`````````````````````````````')
         print("TODAYS COLLECTION :",collection)

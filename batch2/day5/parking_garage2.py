@@ -92,8 +92,8 @@ while(true==True):
             print(collection)
             if (out == None):
                 continue
-        collection = +out
-        print(collection)
+        collection = collection+out
+
         true = time1()
 
 
