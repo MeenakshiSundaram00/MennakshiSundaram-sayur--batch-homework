@@ -49,8 +49,8 @@ def leaving_parking_lot(carId,column,parking_lot,collection):
         return 100
     yes_or_no=input("do you forgot the any(row and coulmn) parameter (yes/no)")
     if(yes_or_no=="yes"):
-
-        return
+      collection= find_my_vechile(parking_lot,carId)
+      return collection
 def time1():
     if(time[1]==60):
         time[1]=0
