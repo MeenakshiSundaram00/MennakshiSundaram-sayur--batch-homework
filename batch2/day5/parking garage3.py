@@ -10,6 +10,7 @@ time=[0,0]
 import sys
 collection=0
 def available_free(parking_lot):
+    
     counter=0
     for i in range(len(parking_lot)):
 

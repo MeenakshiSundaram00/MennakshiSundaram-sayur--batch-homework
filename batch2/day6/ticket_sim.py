@@ -1,19 +1,30 @@
-import sys
+'''HW : Write program to simulate a ticketing system in an amusement park. 
+
+Get input for a party with user’s name and birthday(date, month, year). 
+
+Calculate price based on age (kids , senior cotizen : 50rs, adults : 75). 
+
+On Tuesdays and Thursdays give 20% discount on total cost of tickets. 
+
+Use relevant dateTime modules in python'''
+
+
+import sys#imported needed modules
 from datetime import time
 from datetime import date
 from datetime import datetime
 
-def check_birthday_or_not(current_date,birth_date):
+def check_birthday_or_not(current_date,birth_date):#checkinng whether it is user birthday or not
 
     if(current_date.day==birth_date.day and current_date.month==birth_date.month):
         return True
     return False
-def age(current_date,birth_date):
+def age(current_date,birth_date):#checking the user age by comparing his /her birthay with the current date
     if(current_date.month>=birth_date.month):
         if(current_date.day>=birth_date.day):
             return current_date.year-birth_date.year
     return current_date.year-birth_date.year-1
-def entry_fees(age_of_uesr):
+def entry_fees(age_of_uesr):#alloocating fees user according to his/her age
     if(age_of_uesr>=16 and age_of_uesr<=60):
         return 100
     return 50
