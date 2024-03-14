@@ -13,8 +13,8 @@ def age(current_date,birth_date):
         if(current_date.day>=birth_date.day):
             return current_date.year-birth_date.year
     return current_date.year-birth_date.year-1
-def entry_fees(age):
-    if(age>=16 and age<=60):
+def entry_fees(age_of_uesr):
+    if(age_of_uesr>=16 and age_of_uesr<=60):
         return 100
     return 50
 collc=0
@@ -37,7 +37,7 @@ for i in range(person):
         print("its is free for person",i)
         continue
     age_of_user=age(current_date,birth_date)
-    collc=collc+entry_fees(age)
+    collc=collc+entry_fees(age_of_user)
 if(current_date.weekday()==3 or current_date.weekday()==1):
     collc =collc- (collc*0.2)
     print("after componsation your total bill is",collc)
