@@ -53,4 +53,4 @@ if(current_date.weekday()==3 or current_date.weekday()==1):
     collc =collc- (collc*0.2)
     print("after componsation your total bill is",collc)
     sys.exit(0)
-print(collc)
+print("total bill is",collc)
