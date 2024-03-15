@@ -42,7 +42,7 @@ for i in range(person):
     birth_date=birth.split("/")
     for i in range(3):
         birth_date[i]=int(birth_date[i])
-    if(birth_date[0]>=32 or birth_date[0]<=0 or birth_date[1]>=13 or birth_date[1]<=0 or birth_date[2]>  datetime.now().year):
+    if(birth_date[0   ]>=32 or birth_date[0]<=0 or birth_date[1]>=13 or birth_date[1]<=0 or birth_date[2]>  datetime.now().year):
         print("invalid birthday type")
         sys.exit(0)
     birth_date= date(birth_date[2],birth_date[1],birth_date[0])
