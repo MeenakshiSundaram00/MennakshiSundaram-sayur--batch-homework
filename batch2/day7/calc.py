@@ -34,7 +34,7 @@ while (len(int_of_copy_list)!=1):
     if ("/" in list_of_opertor_of_string):
         index_of_opertor = list_of_opertor_of_string.index('/')
         list_of_opertor_of_string.remove('/')
-        ans = mul(int_of_copy_list[index_of_opertor], int_of_copy_list[index_of_opertor + 1])
+        ans = div(int_of_copy_list[index_of_opertor], int_of_copy_list[index_of_opertor + 1])
         int_of_copy_list.pop(index_of_opertor + 1)
         int_of_copy_list[index_of_opertor] = ans
         ''' print(int_of_copy_list)
@@ -43,7 +43,7 @@ while (len(int_of_copy_list)!=1):
     elif ("*" in list_of_opertor_of_string):
         index_of_opertor = list_of_opertor_of_string.index('*')
         list_of_opertor_of_string.remove('*')
-        ans = div(int_of_copy_list[index_of_opertor], int_of_copy_list[index_of_opertor + 1])
+        ans = mul(int_of_copy_list[index_of_opertor], int_of_copy_list[index_of_opertor + 1])
         int_of_copy_list.pop(index_of_opertor + 1)
         int_of_copy_list[index_of_opertor] = ans
         '''print(int_of_copy_list)
