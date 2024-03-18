@@ -19,8 +19,7 @@ for i in range (len( string_of_number_and_opertor)):
 int_of_copy_list=string_of_copy.split()
 for i in range(len(int_of_copy_list)):
     int_of_copy_list[i]=int(int_of_copy_list[i])
-print(int_of_copy_list)
-print(list_of_opertor_of_string)
+
 '''if(list_of_opertor_of_string[0]=='*'):
     print(mul(int_of_copy_list[0],int_of_copy_list[1]))
 if(list_of_opertor_of_string[0]=='/'):
@@ -32,18 +31,18 @@ if(list_of_opertor_of_string[0]=='-'):
 ans=0
 #check_condition
 while (len(int_of_copy_list)!=1):
-    if ("*" in list_of_opertor_of_string):
-        index_of_opertor = list_of_opertor_of_string.index('*')
-        list_of_opertor_of_string.remove('*')
+    if ("/" in list_of_opertor_of_string):
+        index_of_opertor = list_of_opertor_of_string.index('/')
+        list_of_opertor_of_string.remove('/')
         ans = mul(int_of_copy_list[index_of_opertor], int_of_copy_list[index_of_opertor + 1])
         int_of_copy_list.pop(index_of_opertor + 1)
         int_of_copy_list[index_of_opertor] = ans
         ''' print(int_of_copy_list)
         print(list_of_opertor_of_string)'''
         continue
-    elif ("/" in list_of_opertor_of_string):
-        index_of_opertor = list_of_opertor_of_string.index('/')
-        list_of_opertor_of_string.remove('/')
+    elif ("*" in list_of_opertor_of_string):
+        index_of_opertor = list_of_opertor_of_string.index('*')
+        list_of_opertor_of_string.remove('*')
         ans = div(int_of_copy_list[index_of_opertor], int_of_copy_list[index_of_opertor + 1])
         int_of_copy_list.pop(index_of_opertor + 1)
         int_of_copy_list[index_of_opertor] = ans
@@ -65,11 +64,11 @@ while (len(int_of_copy_list)!=1):
         ans = sub(int_of_copy_list[index_of_opertor], int_of_copy_list[index_of_opertor + 1])
         int_of_copy_list.pop(index_of_opertor + 1)
         int_of_copy_list[index_of_opertor] = ans
-       ''' print(int_of_copy_list)
+        ''' print(int_of_copy_list)
         print(list_of_opertor_of_string)'''
         continue
 
 
-
-print("Answer :",int_of_copy_list)
+ans=int_of_copy_list[0]
+print("Answer :",ans)
 
