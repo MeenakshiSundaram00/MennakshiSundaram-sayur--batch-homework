@@ -1,4 +1,4 @@
-list_of_cahr=["good","ram","dog","abc","bca"]
+list_of_cahr=["good","ram","dog","abc","bca","god"]
 set_of_char=set()
 new_list=[]
 list_of_cahr_with_sam=[]
@@ -29,25 +29,15 @@ def sort():
 def check_used_or_not():
     #repeatd_value=0
 
-    count = 0
-    for i in range(len(new_list)):
-        for j in new_list[i + 1:]:
-
-            if new_list[i] == j:
-                count += 1
-                continue
-    return count
-
-
-
-
-
-
-
-
+    words=[]
+    for i in range(len(sorted(new_list))):
+        for j in range(i+1,len(new_list)):
+            if new_list[i]==new_list[j]:
+                if new_list[j] not in words:
+                    words.append(new_list[j])
 
     #print(repeatd_value)
-
+    return  len(words)
 
 
 
