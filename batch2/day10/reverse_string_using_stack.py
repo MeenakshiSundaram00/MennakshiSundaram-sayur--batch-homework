@@ -1,3 +1,6 @@
+"""Reverse a string: Given a string, reverse it using a stack.
+Eg : Hello -> olleH"""
+
 string=input("enter a string")
 list=[]
 for i in string:
