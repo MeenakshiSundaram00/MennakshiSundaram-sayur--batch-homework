@@ -3,7 +3,7 @@ Input : Hello World
 Output : olleH dlroW
 """
 
-string=input("enter the string")
+
 list=[]
 def popper():
     for j in range(len(list) - 1, -1, -1):
@@ -15,4 +15,6 @@ for i in string:
         print(" ",end="")
     else:
       list.append(i)
+
+string=input("enter the string")
 popper()
