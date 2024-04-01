@@ -8,24 +8,26 @@ Output : [5,4,3,2,2]
 Explanation : Frog (1) ate Frog(0); Frog(2) ate Frog (1). Rest of the frogs are alive
 Input : [4,3,3,2,1]
 Output : [4,3,3,2,1]"""
-
-string=input("enter input as a list")
-list_of_char=string.split()
-list_of_num=[]
+list_of_num=[1,3,1,4,1,2,2,1]
 stack=[]
+
+
 def check(insert):
-    try:
-        if(stack[-1]<insert):
+    if(len(stack)==0):#if the stack doesn't have any element just appending the arugument
+            stack.append(insert)
+    elif(stack[-1]<insert):#if top  is smaller than the arugment pop top and call function
            stack.pop()
            check(insert)
-        else:
+    else:
             stack.append(insert)
 
-    except:
-        stack.append(insert)
-for i in list_of_char:
-    list_of_num.append(int(i))
+
+
+#string = input("enter input as a list")
+#list_of_char=string.split()
+#for i in list_of_char:
+ #   list_of_num.append(int(i))
 for i in list_of_num:
     check(i)
-print(" ".join(map(str,(stack))))
+print(" ".join(map(str,stack)))
 

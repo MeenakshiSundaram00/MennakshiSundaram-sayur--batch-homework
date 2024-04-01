@@ -18,19 +18,20 @@ list_of_char=string.split()
 list_of_num=[]
 stack=[]
 def check(insert):
-    try:
-        if(stack[-1]<insert):
+        if (len(stack) == 0):  # if the stack doesn't have any element just appending the arugument
+           stack.append(insert)
+
+        elif(stack[-1]<insert):#if the the last element is lesser than the current element pop the previous element
            i=stack[-1]
            stack.pop()
 
            insert=insert+i
 
-           check(insert)
-        else:
+           check(insert)#recursion
+        else:#else new element
             stack.append(insert)
 
-    except:
-        stack.append(insert)
+
 for i in list_of_char:
     list_of_num.append(int(i))
 for i in list_of_num:
