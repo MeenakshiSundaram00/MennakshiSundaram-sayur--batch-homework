@@ -7,6 +7,7 @@ output 100.2.67.10
 input 100242200
 output 100.24.220.0, 100.242.20.0'''
 import sys
+import re
 emp=[]
 ans=[]
 
