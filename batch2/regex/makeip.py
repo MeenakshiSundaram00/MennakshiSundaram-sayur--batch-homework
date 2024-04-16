@@ -10,8 +10,6 @@ import sys
 import re
 emp=[]
 ans=[]
-
-
 def check(a,b,c):
     t = int(a)
     i=t

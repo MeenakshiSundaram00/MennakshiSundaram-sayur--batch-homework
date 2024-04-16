@@ -10,17 +10,17 @@ Use string functions.
 import re
 import sys
 
-string = input("enter a ip address")
-x = re.split(r'\.', string)
-#print(len(x))
-if len(x) != 4:
-    print("invalid")
-    sys.exit(0)
-for i in x:
-    if not(i.isnumeric()):
-        print("invalid")
-        sys.exit(0)
-    if int(i) > 255 or int(i) < 0:
-        print("invalid")
-        sys.exit(0)
-print("valid")
+ip_address = input("enter a ip address to verify") #get input from user
+case = re.split(r'\.', ip_address)#split by dot
+if len(case)==4:#check wheather the list contain 4 strings
+     for one_value in case:#loop with all words in the list
+         if re.search(r"^(25[0-5]|2[0-4][0-9]|1?[0-9]{1,2}|[0-9][0-9]|[0-9])$",one_value):
+              continue# just continue the loop
+         else:#else end the program eith printing invalid ip
+              print("invalid ip addreess")
+              sys.exit(0)
+else:#else end the program eith printing invalid ip
+     print("invalid ip addreess")
+     sys.exit(0)
+print("valid adress")# if all string pass print valid
+
