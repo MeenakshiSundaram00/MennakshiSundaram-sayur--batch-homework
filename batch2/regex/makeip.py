@@ -8,57 +8,27 @@ input 100242200
 output 100.24.220.0, 100.242.20.0'''
 import sys
 import re
-emp=[]
-ans=[]
-def check(a,b,c):
-    t = int(a)
-    i=t
-    j = int(b)
-    k = int(c)
-    if i == 0:
-        ans.append(i)
-        return 1
-    if i*100+j*10+k<255:
-        ans.append(i*100+j*10+k)
-        return 3
-    elif i*100+j*10:
-        ans.append(i*10+j)
-        return 2
-def printer():
-    print(*ans,sep=".")
+list_ip=[]
+def valid(ipadd):
+    case = re.split(r'\.', ipadd)  # split by dot
+    if len(case) == 4:  # check wheather the list contain 4 strings
+        for one_value in case:  # loop with all words in the list
+            if re.search(r"^(25[0-5]|2[0-4][0-9]|1?[0-9]{1,2}|[0-9][0-9]|[0-9])$", one_value):
+                continue  # just continue the loop
+            else:  # else end the program eith printing invalid ip
+              return
+    else:  # else end the program eith printing invalid ip
+        return
 
-count=0
-xin=input("enter a string")
-for i in range(len(xin)):
-    emp.append(xin[i])
-while  len(emp)!=0:
-    if count==2:
-        if len(emp)==3:
-          ans.append(int(emp[0])*10+int(emp[1]))
-          ans.append(int(emp[2]))
-        if len(emp)==2:
-            ans.append(int(emp[0]))
-        printer()
-        sys.exit(0)
-    if len(emp)==2:
-      if (emp[0] == "0"):
-          ans.append(0)
-          ans.append(int(emp[1]))
-      else:
-          if int(emp[0])*10+int(emp[1])<255:
-               ans.append(int(emp[0])*10+int(emp[1]))
-          else:
-              ans.append(int(emp[0]))
-              ans.append(int(emp[1]))
-      printer()
-      sys.exit(0)
-    if len(emp) == 1:
-        ans.append(emp[0] )
-        printer()
-        sys.exit(0)
-    value=check(emp[0],emp[1],emp[2])
-    if value==3:
-        count=count+1
-    for j in range(value):
-        emp.remove(emp[0])
-print(*ans,sep=".")
+    print(ipadd)  # if all string pass print valid
+def ip_maker(list_ip):
+        ip=str(list_ip)#create all possbility of ip
+        for first in range(0,len( list_ip)-2):
+            for sec in range(first+1,len(list_ip)-1):
+                for third in range( sec+1,len(list_ip)):
+                     for lst in range(third+1,len(list_ip)):
+                       inp=ip[0:sec]+"."+ip[sec:third]+"."+ip[third:lst]+"."+ip[lst:]#slice from first to last and add .
+
+                       valid(inp)
+list_ip=(input("enter the string"))
+ip_maker(list_ip)
