@@ -11,8 +11,8 @@ input = "wearenurseanddoctor"
 output = true'''
 import sys
 
-listofstring=[]
-def counter(string):
+listofstring=[]#declaring the needed list
+def counter(string):#count and compare no of character
     val= len(string)
     val2=0
     for i in listofstring:
@@ -23,7 +23,7 @@ def counter(string):
     else:
         return True
 
-def innerelement(stringer,i):
+def innerelement(stringer,i):#compare thde two string
     if stringer==i:
         return True
     else:
@@ -33,7 +33,7 @@ listforstring=input("list of element")
 listofstring=listforstring.split()
 string=input("enter the string")
 val=counter(string)
-if val==False:
+if val==False:#if comparison fails fasle will ne print
     print("False")
     sys.exit(0)
 for i in range(len(listforstring)):

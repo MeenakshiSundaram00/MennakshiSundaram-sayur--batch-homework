@@ -5,11 +5,11 @@ eg input = [1,1,1,2,2,3,5,5,5,5], k =2
 output [1,5] (top 2 most frequently occuring numbers)
 input = [4,5,4,5,4,5,3,3,3,7,8,1,1,1], k = 4
 output [4,5,3,1]'''
-listofnumbefrs=[]
+listofnumbefrs=[]#declaring needed list
 copylist=[]
 answerlist=[]
 
-def frequencyreader():
+def frequencyreader():#count the most repeated numbers and remove it from the list
 
     counter=0
     num=0
@@ -29,6 +29,6 @@ for i in listofnumbers:
     listofnumbefrs.append(j)
 key=int(input("enter the no numbers you want to find"))
 copylist=listofnumbefrs.copy()
-for i in range(key):
+for i in range(key):#loopint according to the key value
     frequencyreader()
 print(answerlist)
